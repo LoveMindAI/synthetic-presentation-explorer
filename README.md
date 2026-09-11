@@ -4,7 +4,7 @@ A fully synthetic illustrative dataset for controlled clothing and background ch
 
 **These are not PARSEL participants and are not the stimuli underlying the reported PARSEL results.** Sensitive PARSEL images, personality profiles, transcripts and raw request logs are excluded. Access to PARSEL material requires separate authorization. This illustrative matrix does not substitute for the manuscript's private stimulus sets or their experimental counts.
 
-Open `index.html` in a browser, or serve this directory using `python -m http.server 8000`. The explorer has no external dependencies, analytics, API calls or external fonts.
+Open `index.html` in a browser, or serve this directory using `python -m http.server 8000`. The authored explorer has no external dependencies, author-operated analytics, API calls or external fonts. Hosting providers may inject their own telemetry; that is separate from this companion's code.
 
 - `matrix/`: all 256 lossless, metadata-stripped WebP images; decoded RGB pixels verified against the source PNGs.
 - `data/stimuli.json`: file and decoded-pixel hashes, identity and condition coordinates.
