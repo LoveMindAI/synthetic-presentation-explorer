@@ -1,0 +1,12 @@
+{
+  "identities": 16,
+  "cells": 256,
+  "lossless_pixel_comparisons_passed": 256,
+  "metadata_removed": true,
+  "worked_reconstruction_identity": "S01",
+  "human_validation": false,
+  "known_cue_limitations": [
+    "S03 evening: moderate or ambiguous occasion cue",
+    "S07 clutter: moderate or ambiguous clutter cue"
+  ]
+}
