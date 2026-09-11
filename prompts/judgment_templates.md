@@ -1,6 +1,8 @@
 # Judgment templates
 
-These are participant-free extracts of the study apparatus, provided to explain elicitation. No model has been called by this explorer. The synthetic illustrative bank is not represented as the complete study stimulus pool. Identifiers below are fictional placeholders, and no measured-person profile is supplied.
+These extracts show how we asked models to make judgments. Identifiers are replaced with fictional placeholders, and sensitive participant profiles are withheld. The explorer itself makes no model calls. The manuscript describes the separate stimulus sets used in the study. Quoted prompt wording is preserved as used.
+
+[Explore the images](https://anonymous.4open.science/w/synthetic-presentation-explorer-7E83/) · [Browse the code and materials](https://anonymous.4open.science/r/synthetic-presentation-explorer-7E83/)
 
 ## First-impression batch instruction (verbatim)
 
@@ -145,7 +147,7 @@ Following are more questions about the person on the photograph. Here, we are in
 
 ## Whole-set ranking continuation
 
-The instruction below follows actual prior rating responses in the same history. S01–S04 replace participant identifiers. It requests one complete ranking in one response, not separate pairwise calls. The forced ordering is a model task; human choices are compared through derived preference tiers, not described as an identical human forced-ranking instrument.
+The instruction below follows the model's actual rating responses in the same history. S01 through S04 replace participant identifiers. A single response gives the complete ranking. For comparison with humans, we derive preference tiers from their recorded choices; the human task used a different choice format.
 
 Now make the single final partner choice for the decision task. Rank every participant you just rated from your most preferred partner to your least preferred partner. Use each PID exactly once and do not use ties. Return one JSON object only with exactly two keys: partner_ranking and top_choice. partner_ranking must be a complete ordered permutation of these PIDs: ["S01", "S02", "S03", "S04"]. top_choice must equal partner_ranking[0]. Example shape: {"partner_ranking": ["S01", "S02", "S03", "S04"], "top_choice": "S01"}
 
@@ -159,9 +161,8 @@ Matched condition: [WITHHELD: sensitive participant-derived profile, not include
 
 First encounter: partner image + assigned decision-task text + rating schema.
 
-Second encounter: completed historical conversation with role labels, or a no-new-conversation control. Historical participant speech is not generated dialogue. No transcripts are released here.
+Second encounter: a transcript of a completed human conversation with role labels, or a control with no new conversation. Transcripts remain private.
 
 Third-encounter instruction (verbatim): THIRD ENCOUNTER: here is the current photograph of the SAME partner. No additional conversation or biographical information is supplied. Consider the evidence available across these encounters and give your current judgment.
 
-Each branch retains the actual preceding model responses. The repeat-image and changed-image branches are separate requests with their corresponding histories. This summary is explanatory, not a substitute for the manuscript specification.
-
+Each branch retains the model's actual preceding responses. The repeat-image and changed-image branches use separate requests with their corresponding histories. See the manuscript for the full experimental specification.

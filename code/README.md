@@ -1,6 +1,8 @@
 # Image construction
 
-This release contains portable, scrubbed code rather than the private experiment orchestration system. No participant-derived personality text is included.
+Use this code to inspect the image-construction method and reproduce one complete example. We extracted the relevant functions from the research pipeline and removed identifying information. Participant-derived personality text remains private.
+
+[Explore the images](https://anonymous.4open.science/w/synthetic-presentation-explorer-7E83/) · [Browse all research materials](https://anonymous.4open.science/r/synthetic-presentation-explorer-7E83/)
 
 ## Deterministic worked example
 
@@ -16,14 +18,14 @@ The supplied S01 layers reconstruct all 16 illustrated S01 cells. Compare their 
 
 `data/generation_prompts.json` contains initial clothing/background trial prompts, selected repair prompts, and the override map identifying the replacement source for each repaired layer. `generate_one.py` extracts the original image API request pattern into a standalone one-call utility. Dry-run is the default. `--go` uses the caller's `OPENROUTER_API_KEY` and can incur charges. No key is supplied, no calls run in the explorer, and no automatic retries occur. The reference must be supplied explicitly; repair prompts may expect an empty-room image rather than a portrait.
 
-Historical model identifiers are `google/gemini-3-pro-image` and `openai/gpt-image-2.5-flare` for the balanced layer design. Endpoints and provider behavior may change. Generated outputs are stochastic; the utility is not a guarantee of regenerating identical pixels.
+We used `google/gemini-3-pro-image` and `openai/gpt-image-2.5-flare` in the balanced layer design. Endpoints and provider behavior may change. Image generation is stochastic, so a new call can produce a different image. The supplied final layers support exact reconstruction of the worked example.
 
 ## Face locking before composition
 
 `face_lock.py` contains the extracted alignment and face-lock mathematics from the construction pipeline. The input arrays are a canonical RGB source and its person mask, an edited RGB foreground and mask, and facial landmarks. Eye-center alignment uses a similarity transform; a feathered jaw/head boundary combines the canonical upper region with the aligned clothing. The inner face is explicitly overwritten with source pixels and made opaque. Final layers are composited with Pillow.
 
-Person segmentation and landmarks in the source pipeline used Apple's Vision framework; `segment_person.swift` is provided. Reviewed face selection and per-identity boundary adjustments are not replaced by a claim that segmentation always succeeds. Final source layers, visual inspection, and decoded-pixel checks are distinct evidence.
+We used Apple's Vision framework to locate the person and facial landmarks; `segment_person.swift` is included. Some images needed reviewed face selection or individual boundary adjustments. The final layers and pixel checks document the resulting construction, while visual inspection addresses the quality of the image itself.
 
 ## Limits
 
-Original character briefs describe intended impressions, not validated personality scores. Some identities were subsequently recast, so those original briefs are labeled design-stage history, not exact final-character profiles. The initial editor assignment was balanced across categories; selected repairs are documented separately. Neither a deterministic pixel check nor model cue ratings establish human validity.
+The original character briefs record intended impressions. Their scores have no psychometric validation, and some identities were recast after those briefs were written. The initial editor assignment was balanced across categories; the records identify later repairs separately. Human evaluation would be needed to establish how viewers respond to the finished images.
